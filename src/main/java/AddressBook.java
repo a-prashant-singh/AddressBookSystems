@@ -153,5 +153,20 @@ public class AddressBook {
 
            }
 
+    public void countByCityOrState() {
+        System.out.print("Enter city or state to count persons: ");
+        String location = scanner.nextLine();
+
+        long countByCity =  contacts.stream()
+                .filter(contact -> contact.getCity().equalsIgnoreCase(location) )
+                .count();
+
+        long countByState =  contacts.stream()
+                .filter(contact -> contact.getState().equalsIgnoreCase(location))
+                .count();
+
+        System.out.println("Count by City: " + countByCity);
+        System.out.println("Count by State: " + countByState);
+    }
 
 }
