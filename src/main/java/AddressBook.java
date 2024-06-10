@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class AddressBook {
     private List<Contact> contacts;
@@ -167,6 +164,13 @@ public class AddressBook {
 
         System.out.println("Count by City: " + countByCity);
         System.out.println("Count by State: " + countByState);
+    }
+
+    public void sortByName() {
+            contacts.stream()
+                    .sorted(Comparator.comparing(Contact::getFirstName).thenComparing(Contact::getLastName))
+                    .forEach(System.out::println);
+
     }
 
 }

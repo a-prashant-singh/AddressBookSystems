@@ -18,6 +18,7 @@ public class AddressBookMain {
             System.out.println("Press 6 for searching by city or state : ");
             System.out.println("Press 7 for View by city or state : ");
             System.out.println("Press 8 for Count of contact by city or state : ");
+            System.out.println("Press 9 for sorting the contact by name : ");
             System.out.println("Press 0 for display contact details: ");
             option=scanner.nextInt();
             if(option==1)
@@ -51,6 +52,10 @@ public class AddressBookMain {
             if(option==8)
             {
                 addressBook.countByCityOrState();
+            }
+            if(option==9)
+            {
+                addressBook.sortByName();
             }
             if(option==0)
             {
