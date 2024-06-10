@@ -11,11 +11,16 @@ public class AddressBookMain {
         String op = "";
         do {
             System.out.println("Press 1 for adding contact details: ");
+            System.out.println("Press 2 for Editing contact details: ");
             System.out.println("Press 0 for display contact details: ");
             option=scanner.nextInt();
             if(option==1)
             {
                addressBook.addContact();
+            }
+            if(option==2)
+            {
+                addressBook.editContact();
             }
             if(option==0)
             {
