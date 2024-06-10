@@ -16,6 +16,7 @@ public class AddressBookMain {
             System.out.println("Press 4 for adding multiple contact details: ");
             System.out.println("Press 5 for adding new Address Book : ");
             System.out.println("Press 6 for searching by city or state : ");
+            System.out.println("Press 7 for View by city or state : ");
             System.out.println("Press 0 for display contact details: ");
             option=scanner.nextInt();
             if(option==1)
@@ -41,6 +42,10 @@ public class AddressBookMain {
             if(option==6)
             {
                 addressBook.searchByCityOrState();
+            }
+            if(option==7)
+            {
+                addressBook.viewByCityOrState();
             }
             if(option==0)
             {

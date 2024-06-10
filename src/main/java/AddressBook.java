@@ -142,4 +142,16 @@ public class AddressBook {
                 .filter(contact -> contact.getCity().equalsIgnoreCase(location) || contact.getState().equalsIgnoreCase(location))
                 .forEach(System.out::println);
     }
+
+    public void viewByCityOrState() {
+        System.out.print("Enter city or state to view persons: ");
+        String location = scanner.nextLine();
+
+        contacts.stream()
+                .filter(contact -> contact.getCity().equalsIgnoreCase(location) || contact.getState().equalsIgnoreCase(location))
+                .forEach(System.out::println);
+
+           }
+
+
 }
