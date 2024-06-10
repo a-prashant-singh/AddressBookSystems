@@ -133,4 +133,13 @@ public class AddressBook {
         String name = scanner.nextLine();
         addressBooks.put(name, new AddressBook());
     }
+
+    public void searchByCityOrState() {
+        System.out.print("Enter city or state to search: ");
+        String location = scanner.nextLine();
+
+        contacts.stream()
+                .filter(contact -> contact.getCity().equalsIgnoreCase(location) || contact.getState().equalsIgnoreCase(location))
+                .forEach(System.out::println);
+    }
 }
