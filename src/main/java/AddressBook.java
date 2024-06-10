@@ -173,4 +173,31 @@ public class AddressBook {
 
     }
 
+    public void sortByCityStateZip() {
+        System.out.println("Sort by: 1. City 2. State 3. Zip");
+        int choice = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+
+        Comparator<Contact> comparator = null;
+        switch (choice) {
+            case 1:
+                comparator = Comparator.comparing(Contact::getCity);
+                break;
+            case 2:
+                comparator = Comparator.comparing(Contact::getState);
+                break;
+            case 3:
+                comparator = Comparator.comparing(Contact::getZip);
+                break;
+            default:
+                System.out.println("Invalid choice");
+                return;
+        }
+
+        contacts.stream()
+                    .sorted(comparator)
+                    .forEach(System.out::println);
+
+    }
+
 }
