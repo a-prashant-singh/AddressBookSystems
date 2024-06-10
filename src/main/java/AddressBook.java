@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class AddressBook {
@@ -116,5 +117,13 @@ public class AddressBook {
             contacts.add(contact);
 
         }
+    }
+
+    public void addAddressBook() {
+
+        Map<String, AddressBook> addressBooks = Map.of();
+        System.out.print("Enter the name of the new Address Book: ");
+        String name = scanner.nextLine();
+        addressBooks.put(name, new AddressBook());
     }
 }
