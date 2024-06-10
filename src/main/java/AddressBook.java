@@ -86,4 +86,35 @@ public class AddressBook {
         contacts.removeIf(contact -> contact.getFirstName().equals(firstName) && contact.getLastName().equals(lastName));
     }
 
+    public void addMultipleContacts() {
+        while (true) {
+            System.out.print("Do you want to add a new contact? (yes/no): ");
+            String choice = scanner.nextLine();
+            if (choice.equalsIgnoreCase("no")) {
+                break;
+            }
+
+            System.out.println("Enter contact details:");
+            System.out.print("First Name: ");
+            String firstName = scanner.nextLine();
+            System.out.print("Last Name: ");
+            String lastName = scanner.nextLine();
+            System.out.print("Address: ");
+            String address = scanner.nextLine();
+            System.out.print("City: ");
+            String city = scanner.nextLine();
+            System.out.print("State: ");
+            String state = scanner.nextLine();
+            System.out.print("Zip: ");
+            String zip = scanner.nextLine();
+            System.out.print("Phone Number: ");
+            String phoneNumber = scanner.nextLine();
+            System.out.print("Email: ");
+            String email = scanner.nextLine();
+
+            Contact contact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
+            contacts.add(contact);
+
+        }
+    }
 }
