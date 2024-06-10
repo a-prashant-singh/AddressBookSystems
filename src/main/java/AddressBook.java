@@ -34,7 +34,14 @@ public class AddressBook {
 
         Contact contact = new Contact(firstName, lastName, address, city, state, zip, phoneNumber, email);
 
-        contacts.add(contact);
+        if (contacts.contains(contact))
+        {
+            System.out.println("Duplicate entries are not allowed. ");
+        }
+        else {
+            contacts.add(contact);
+        }
+
     }
 
     public void showContacts() {
